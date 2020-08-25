@@ -3,14 +3,15 @@ import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "../src/components/Navbar";
 import SearchForm from "../src/components/SearchForm";
-import Search from "../src/components/Search";
+import SearchResults from "../src/components/SearchResults";
+// import Search from "../src/components/Search";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <SearchForm />
-      <Search />
+      <SearchResults />
     </Router>
   );
 }

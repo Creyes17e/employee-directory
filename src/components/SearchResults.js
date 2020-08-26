@@ -3,7 +3,10 @@ import Moment from "react-moment";
 
 function SearchResults(props) {
   return (
-    <table>
+    <table
+      className="table-striped"
+      style={{ marginLeft: "auto", marginRight: "auto" }}
+    >
       <thead>
         <tr className="text-center">
           <th>Image</th>

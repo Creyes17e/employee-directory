@@ -20,7 +20,7 @@ class Container extends Component {
       )
       .catch((err) => console.log(err));
   }
-  //When the search input changes it shows the employee the name matches
+  //When the search input changes it filters by name
   handleInputChange = (event) => {
     const employees = this.state.employees;
     const searchInput = event.target.value;

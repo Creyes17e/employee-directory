@@ -25,7 +25,9 @@ class Container extends Component {
     const employees = this.state.employees;
     const searchInput = event.target.value;
     const filterEmployees = employees.filter(
-      (employee) => employee.name.first.indexOf(searchInput) > -1
+      (employee) =>
+        employee.name.first.toLowerCase().indexOf(searchInput.toLowerCase()) >
+        -1
     );
     this.setState({
       filterEmployees,

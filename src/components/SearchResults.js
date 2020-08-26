@@ -11,7 +11,23 @@ function SearchResults(props) {
           <th>DOB</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        {props.results.map((result) => (
+          <tr className="table" key={result.login.uuid}>
+            <td>
+              <img
+                className=""
+                src={result.picture.thumbnail}
+                alt="employee-selfie"
+              />
+            </td>
+            <td>{result.name.first + "" + result.name.last}</td>;
+            <td>{result.cell}</td>
+            <td>{result.email}</td>
+            <td>{result.dob.date}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 }

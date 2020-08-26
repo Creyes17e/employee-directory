@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchForm() {
+function SearchForm(props) {
   return (
     <form className="search offset-5">
       <div className="form-group">
@@ -10,6 +10,8 @@ function SearchForm() {
           type="text"
           className="form-control"
           placeholder="Search"
+          onChange={props.handleInputChange}
+          value={props.value}
         />
       </div>
     </form>

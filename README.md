@@ -29,7 +29,7 @@ Created a react app and deployed it to github using yarn build.
 
 ## Credits
 
-Smashingmagazine.com, Randomuser.me,YouTube,Stack Overflow, Google Fu, Bootcamp Instructor, TA's
+Unit 19 Activity: 18 & 23,Smashingmagazine.com, Randomuser.me,YouTube,Stack Overflow, Google Fu, Bootcamp Instructor, TA's
 
 ## License
 

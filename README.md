@@ -12,7 +12,7 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 
 ## Image
 
-![site image](./public/img/directory.JPG)
+![site image](./public/assets/img/directory.JPG)
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ License:MIT
 
 ## Usage
 
-View entire employee directory at once!
+View entire employee directory at once and you may also sort employees by last name.
 
 ## Tests
 

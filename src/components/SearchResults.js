@@ -10,7 +10,9 @@ function SearchResults(props) {
       <thead>
         <tr className="text-center">
           <th>Image</th>
-          <th>Name</th>
+          <th onClick={props.sortEmployeesByName} style={{ cursor: "pointer" }}>
+            Name <i class="fa fa-sort" aria-hidden="true"></i>
+          </th>
           <th>Phone</th>
           <th>Email</th>
           <th>DOB</th>

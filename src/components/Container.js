@@ -8,8 +8,9 @@ class Container extends Component {
     search: "",
     employees: [],
     filterEmployees: [],
-    order: "descend",
+    order: "",
   };
+  // When component mounts, it gets a list of all available employees and filtered employees
   componentDidMount() {
     API.getEmployeeList()
       .then((res) =>
@@ -20,7 +21,7 @@ class Container extends Component {
       )
       .catch((err) => console.log(err));
   }
-  //When the search input changes it filters by name
+  //When the search input changes it identifies names that are equivalent to our input
   handleInputChange = (event) => {
     const employees = this.state.employees;
     const searchInput = event.target.value;
@@ -33,7 +34,9 @@ class Container extends Component {
       filterEmployees,
     });
   };
-
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+  };
   //API call when page refreshes
   searchEmployees = () => {
     API.getEmployeeList()
@@ -45,6 +48,29 @@ class Container extends Component {
       )
       .catch((err) => console.log(err));
   };
+  //Sorts employees by last name
+  sortEmployeesByName = () => {
+    const sortEmployees = this.state.filterEmployees;
+    if (this.state.order === "ascending") {
+      const sortByName = sortEmployees.sort((a, b) =>
+        a.name.last > b.name.last ? -1 : 1
+      );
+      console.log(sortByName);
+      this.setState({
+        filterEmployees: sortByName,
+        order: "descending",
+      });
+    } else {
+      const sortByName = sortEmployees.sort((a, b) =>
+        a.name.last > b.name.last ? 1 : -1
+      );
+      this.setState({
+        filterEmployees: sortByName,
+        order: "ascending",
+      });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -52,7 +78,10 @@ class Container extends Component {
           handleInputChange={this.handleInputChange}
           employee={this.state.employees}
         />
-        <SearchResults results={this.state.filterEmployees} />
+        <SearchResults
+          results={this.state.filterEmployees}
+          sortEmployeesByName={this.sortEmployeesByName}
+        />
       </div>
     );
   }
